@@ -1,0 +1,35 @@
+#=============================================================================#
+#INTRODUÇÃO AOS TIPOS DE PLANILHAS DO PROGRAMA                                #
+#=============================================================================#
+#									      #
+#TIPOS DE PLANILHAS:							      #
+#									      #
+#OS TIPOS SAO COMPOSTOS POR 3 PRINCIPAIS PARTES				      #
+#1A - O NOME								      #
+#	AUTO-EXPLICATIVO						      #
+#									      #
+#2O - CONFIGURAÇÕES DE FILTRAGEM					      #
+#	CONFIGURAÇÕES A RESPEITO DO PROCESSO DE FILTRAGEM, É ATRAVÉS DELAS QUE#
+#	O PROGRAMA SABE QUAL A MANEIRA CORRETA DE FILTRAR O ARQUIVO BRUTO E   #
+#	TRANSFORMA-LO EM UMA TABELA MAIS COMPACTA			      #
+#									      #
+#	A TABELA É DIVIDIDA EM DOIS TIPOS PRINCIPAIS DE COLUNAS, SÃO ELES:    #
+#									      #
+#	*COLUNAS DE AGRUPAMENTO:					      #
+#		COLUNAS EM QUE O ARQUIVO BRUTO SERA COMPACTADO, POR EXEMPLO   #
+#		SE AS COLUNAS DE AGRUPAMENTO FOREM CIDADE E ESTADO, A PLANILHA#
+#		SERA AGRUPADA PARA CADA CIDADE E ESTADO DIFERENTES, ASSIM,    #
+#		TODAS AS INFORMAÇÕES RELATIVAS A CADA CIDADE E ESTADO SERÃO   #
+#               CONDENSADAS CONFORME AS COLUNAS DE CONTAGEM		      #
+#									      #
+#	*COLUNAS DE CONTAGEM:
+#		
+#
+#
+#
+#
+#
+#3A - CONFIGURAÇÕES DE ANALIZE						      #
+#	CONFIGURAÇÕES A RESPEITO DE COMO O PROCESSO DE ANALIZE E PREVISAO SERA#
+#	FEITO E EM QUAIS COLUNAS ELE SERA APLICADO			      #
+
