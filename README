@@ -1,0 +1,9 @@
+#TABLE FILTER
+
+Projeto feito para automatizar a filtragem e analise de planilhas 
+
+#REQUISITOS
+
+* Python 2.7
+* Pandas ou Anaconda 4.2
+* Psycopg2
