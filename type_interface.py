@@ -1,3 +1,5 @@
+#!/usr/bin/ent Python 2.7
+
 import Tkinter as tk
 import standart as std
 import typehandle as tph
@@ -255,7 +257,8 @@ class TypeFrame(tk.Frame):
         index = index[0]
         name = self.typelistbox.get(index)
 
-        print tph.get_details(name)
+        text = tph.get_details(name)
+        tkMessageBox.showinfo('Informacoes do tipo ' + name, text)
 
 
     def add_group_entry(self):

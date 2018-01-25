@@ -5,10 +5,10 @@ Estacao
 Ocupado
 Total
 Available
-mas
-manda,embora
-agora,vc,me
-que
-eu
-gostava
-tantodevoceampooooooor
+ADSL-VELHO
+NOME_ESTACAO,NOME_ESTACAO;LOCALIDADE,LOCALIDADE;REGIONAL,REGIONAL
+NOME_ESTACAO,TOTAL,;STATUS_PORTA,DISPONIVEL,disponivel;STATUS_PORTA,OCUPADO,ocupado
+NOME_ESTACAO
+OCUPADO
+TOTAL
+DISPONIVEL

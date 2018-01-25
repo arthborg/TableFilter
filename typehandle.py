@@ -1,6 +1,5 @@
 #!/usr/bin/ent Python 2.7
 
-
 #==============================================================================
 #TYPE HANDLE
 #==============================================================================
@@ -257,7 +256,7 @@ def get_details(name):
     details += 'COLUNAS DE AGRUPAMENTO:\n'
     for i in range(0, len(group_cols)):
 
-        details += '\tNome original: '+group_cols[i]+ ' - Nome na tabela filtrada: '+group_cols_new[i]+'\n'
+        details += '\tNome original: '+group_cols[i]+ '\n\tNome na tabela filtrada: '+group_cols_new[i]+'\n'
 
     count_cols = target.get_count_cols()
     count_cols_new = target.get_count_cols_newname()
@@ -267,10 +266,10 @@ def get_details(name):
 
     for i in range(0, len(count_cols)):
 
-        details += '\tNome original: '+count_cols[i]+' - Nome na tabela filtrada: '+count_cols_new[i]+' - Valor analizado na contagem: '+count_condition[i]+'\n' 
+        details += '\tNome original: '+count_cols[i]+'\n\tNome na tabela filtrada: '+count_cols_new[i]+'\n\tValor analizado na contagem: '+count_condition[i]+'\n' 
     
 
-    details += '\nCONFIGURACOES DE ANALIZE\n'
+    details += '\nCONFIGURACOES DE ANALIZE\n\n'
     details += 'Analize feita pela coluna: ' + target.get_main_col() + '\n'
     details += 'Analize feita usando dados da coluna: ' + target.get_target_col() + '\n'
     details += 'Coluna que guarda o total: ' + target.get_total_col() + '\n'
