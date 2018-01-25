@@ -129,10 +129,10 @@ class ConversionFrame(tk.Frame):
 
         #==============================================================================
         #DISPOSING FRAMES
-        self.topframe.grid(row=0, column=0)
+        self.topframe.pack()
         #self.sheetsframe.grid(row=1, column=0)
-        self.sheetstextframe.grid(row=2, column=0)
-        self.advbuttonframe.grid(row=3, column=0)
+        self.sheetstextframe.pack()
+        self.advbuttonframe.pack()
         #self.advframe.grid(row=4, column=0)
 
         #==============================================================================
@@ -150,9 +150,9 @@ class ConversionFrame(tk.Frame):
     def toggle_advanced(self, event):
         
         if self.ADVANCED_FLAG is False:
-            self.advframe.grid(row=4, column=0)
+            self.advframe.pack()
         else:
-            self.advframe.grid_forget()
+            self.advframe.pack_forget()
 
         self.ADVANCED_FLAG = not self.ADVANCED_FLAG
 
@@ -236,7 +236,20 @@ class ConversionFrame(tk.Frame):
             self.CHECKSHEET_LIST.append(chk)
 
         self.corvertsheetsbutton.grid(row=count, column=0)
-        self.sheetsframe.grid(row=1, column=0)
+        
+        self.advbuttonframe.pack_forget()
+        self.sheetstextframe.pack_forget()
+        self.sheetsframe.pack()
+        
+        if self.ADVANCED_FLAG is True:
+            self.advframe.pack_forget()
+
+        self.sheetsframe.pack()
+        self.sheetstextframe.pack()
+        self.advbuttonframe.pack()
+
+        if self.ADVANCED_FLAG is True:
+            self.advframe.pack()
 
 
     def convert_sheets(self):

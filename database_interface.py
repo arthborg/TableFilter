@@ -76,7 +76,7 @@ class DatabaseFrame(tk.Frame):
         
         #==============================================================================
         ###MAIN FRAME
-        self.mainframe.grid(row=0, column=0)
+        self.mainframe.pack()
         self.titlelabel.grid(row=0, column=0)
         self.databaselistbox.grid(row=1, column=0)
         self.deletebutton.grid(row = 2, column=0)
@@ -131,7 +131,7 @@ class DatabaseFrame(tk.Frame):
         if self.verify_selected() is False:
             return
         self.clear_grid()
-        self.excelframe.grid(row=1, column=0)
+        self.excelframe.pack()
         index = self.databaselistbox.curselection()[0]
 
         self.filenameentry.delete(0, tk.END)
@@ -173,7 +173,7 @@ class DatabaseFrame(tk.Frame):
         if self.verify_selected() is False:
             return
         self.clear_grid()
-        self.renamecolumnframe.grid(row=1, column=0)
+        self.renamecolumnframe.pack()
         index = self.databaselistbox.curselection()[0]
         self.SELECTEDTABLE = self.databaselistbox.get(index)
         self.columnlistbox.delete(0, tk.END)
@@ -198,7 +198,7 @@ class DatabaseFrame(tk.Frame):
         if self.verify_selected() is False:
             return
         self.clear_grid()
-        self.renameframe.grid(row=1, column=0)
+        self.renameframe.pack()
         index = self.databaselistbox.curselection()[0]
         
         self.tablenameentry.delete(0, tk.END)
@@ -226,9 +226,9 @@ class DatabaseFrame(tk.Frame):
 
     def clear_grid(self):
 
-        self.renamecolumnframe.grid_forget()
-        self.renameframe.grid_forget()
-        self.excelframe.grid_forget()
+        self.renamecolumnframe.pack_forget()
+        self.renameframe.pack_forget()
+        self.excelframe.pack_forget()
         self.statuslabel['text'] = ''
 
 

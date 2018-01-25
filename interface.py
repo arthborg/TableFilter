@@ -1,6 +1,7 @@
 import ttk
 import Tkinter as tk 
 import convert as cvt
+import standart as std
 import typehandle as tph
 import filter_interface
 import conversion_interface
@@ -22,7 +23,7 @@ notebook = ttk.Notebook(root)
 
 
 ### TYPE INITIALIZATION
-tph.initialize_types('types')
+tph.initialize_types(std.TYPE_FILENAME)
 
 
 ### CONVERSION FRAME

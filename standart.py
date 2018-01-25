@@ -4,7 +4,6 @@ import datetime
 import pypostgre as ppg
 
 
-
 GROWTH = 'TAXA DE CRESCIMENTO'
 PREDICTION = 'PREVISAO PROXIMO MES'
 EXHAUSTION = 'PREVISAO DE ESGOTAMENTO'
@@ -16,7 +15,7 @@ EXHAUSTION = 'PREVISAO DE ESGOTAMENTO'
 SHOW_DEBUG = True
 SSE_ALPHA = 0.5
 DBNAME = 'capacidade'
-TYPE_FILENAME = 'types'
+TYPE_FILENAME = 'types.dat'
 
 #==============================================================================
 

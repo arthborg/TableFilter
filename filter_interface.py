@@ -22,34 +22,38 @@ class FilterFrame(tk.Frame):
 
 
     def make_widgets(self):
+        
+        ##MAINFRAME
+        self.mainframe = tk.Frame(self)
 
         ###COMBOBOXES
-        self.tablebox = ttk.Combobox(self, state='readonly')
-        self.typebox = ttk.Combobox(self, state='readonly')
-        self.orderbox = ttk.Combobox(self, state='readonly')
+        self.tablebox = ttk.Combobox(self.mainframe, state='readonly')
+        self.typebox = ttk.Combobox(self.mainframe, state='readonly')
+        self.orderbox = ttk.Combobox(self.mainframe, state='readonly')
 
         ###LABELS
-        self.selectlabel = tk.Label(self, text='Selecione a planilha: ')
-        self.obsselectlabel = tk.Label(self, text='OBS.: Se sua planilha nao estiver presente clique no botao para atualizar')
-        self.selecttypelabel = tk.Label(self, text='Selecione o tipo da planilha')
-        self.obslabel = tk.Label(self, text='OBS.: A filtragem e feita com base no tipo da planilha')
-        self.renamelabel = tk.Label(self, text='(Opcional) Renomear para ')
-        self.resultlabel = tk.Label(self, text='')
-        self.orderlabel = tk.Label(self, text='(Opcional) Ordenar por ')
+        self.selectlabel = tk.Label(self.mainframe, text='Selecione a planilha: ')
+        self.obsselectlabel = tk.Label(self.mainframe, text='OBS.: Se sua planilha nao estiver presente clique no botao para atualizar')
+        self.selecttypelabel = tk.Label(self.mainframe, text='Selecione o tipo da planilha')
+        self.obslabel = tk.Label(self.mainframe, text='OBS.: A filtragem e feita com base no tipo da planilha')
+        self.renamelabel = tk.Label(self.mainframe, text='(Opcional) Renomear para ')
+        self.resultlabel = tk.Label(self.mainframe, text='')
+        self.orderlabel = tk.Label(self.mainframe, text='(Opcional) Ordenar por ')
 
         ###BUTTONS
-        self.updatevalues = tk.Button(self, text='Atualizar Planilhas', command=self.update_tablebox)
-        self.filterbutton = tk.Button(self, text='Filtrar Planilha', command=self.filter)
+        self.updatevalues = tk.Button(self.mainframe, text='Atualizar Planilhas', command=self.update_tablebox)
+        self.filterbutton = tk.Button(self.mainframe, text='Filtrar Planilha', command=self.filter)
 
         #ENTRYS
-        self.renameentry = tk.Entry(self)
+        self.renameentry = tk.Entry(self.mainframe)
 
         #CHECKBOXES
         self.renamecheckboxvariable = tk.IntVar()
-        self.renamecheckbox = tk.Checkbutton(self, text='Usar nome informado', variable=self.renamecheckboxvariable)
+        self.renamecheckbox = tk.Checkbutton(self.mainframe, text='Usar nome informado', variable=self.renamecheckboxvariable)
 
 
     def dispose_widgets(self):
+        self.mainframe.pack()
         self.selectlabel.grid(row=0,column=0)
         self.tablebox.grid(row=0,column=1)
         self.selecttypelabel.grid(row=1,column=0)
