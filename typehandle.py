@@ -13,6 +13,7 @@ class TableType():
     def __init__(self, name, group_cols, count_cols, maincol, tgtcol, totalcol, availcol):
         self.name = name
         self.group_cols = group_cols
+        #EL = target, newname, [cond1, cond2 ..., condn]
         self.count_cols = count_cols
         self.main_col = maincol
         self.target_col = tgtcol
@@ -116,8 +117,17 @@ def make_type(name, groups, counts, main_col, target_col, total_col, avail_col):
     final_counts = []
     for c in counts:
         column = c.split(',')
+
+        condlist = column[2]
+        condlist = condlist.split('|')
+
+        column[2] = []
+        for i in condlist:
+            column[2].append(i)
+
         final_counts.append(column)
-    final_counts[-1][-1] = final_counts[-1][-1].rstrip()
+
+    final_counts[-1][-1][-1] = final_counts[-1][-1][-1].rstrip()
 
     main_col = main_col.rstrip()
     target_col = target_col.rstrip()
@@ -262,11 +272,24 @@ def get_details(name):
     count_cols_new = target.get_count_cols_newname()
     count_condition = target.get_count_cols_condition()
 
+    new_list = []
+
+    for element in count_condition:
+        
+        finalelement = '('
+        for el in element:
+            finalelement += el
+            if el is not element[-1]:
+                finalelement += ', '
+        
+        finalelement += ')'
+        new_list.append(finalelement)
+
     details += '\nCOLUNAS DE CONTAGEM:\n'
 
     for i in range(0, len(count_cols)):
 
-        details += '\tNome original: '+count_cols[i]+'\n\tNome na tabela filtrada: '+count_cols_new[i]+'\n\tValor analizado na contagem: '+count_condition[i]+'\n' 
+        details += '\tNome original: '+count_cols[i]+'\n\tNome na tabela filtrada: '+count_cols_new[i]+'\n\tValor analizado na contagem: '+new_list[i]+'\n' 
     
 
     details += '\nCONFIGURACOES DE ANALIZE\n\n'
@@ -295,7 +318,15 @@ def write_new_type(filename, name, count_cols, group_cols, main, target, total, 
     strcount = ''
 
     for c in count_cols:
-        strcount += c[0] + ',' + c[1] + ',' + c[2]
+        strcount += c[0] + ',' + c[1] + ','
+        
+        conditions = c[2].split('|')
+
+        for cond in conditions:
+            strcount += cond
+            if cond is not conditions[-1]:
+                strcount += '|'
+
         if c is not count_cols[-1]:
             strcount += ';'
     f.write('\n')
@@ -358,7 +389,13 @@ def rewrite_list(filename):
 
         strcnt = ''
         for i in range(0,len(count)):
-            strcnt += count[i] + ',' + countnew[i] + ',' + countcond[i]
+            strcnt += count[i] + ',' + countnew[i] + ','
+            
+            for cond in countcond[i]:
+                strcnt += cond
+                if cond is not countcond[i][-1]:
+                    strcnt += '|'
+
             if i != len(count)-1:
                 strcnt += ';'
         f.write('\n')

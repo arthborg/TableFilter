@@ -327,7 +327,7 @@ def create_table(dbname, table, col_names):
     conn.close()
 
 
-#                 str         str     str      list of tup  list of trip           
+#                 str         str     str      list of tup  list of trip -> 3rd is also list (or)          
 def agroup_table(dbname, table_from, table_to, wanted_cols, count_cols=None, order = None):
 
     try:
@@ -349,11 +349,14 @@ def agroup_table(dbname, table_from, table_to, wanted_cols, count_cols=None, ord
     if count_cols != None and count_cols != []:
         for i in count_cols:
 
-            if i[2] == '' or i[2] is None:
+            if i[2] == [''] or i[2] is None or i[2] == []:
                 command += 'COUNT (' + format_string_sql(i[0]) + ')'
             else:
-                command += 'COUNT ( CASE ' + format_string_sql(i[0]) + ' WHEN ' + format_string_sql(i[2], 1) + ' THEN 1 ELSE NULL END)'
-            
+                command += 'COUNT ( CASE '
+                for cond in i[2]:
+                    command += 'WHEN ' + format_string_sql(i[0]) + ' = ' + format_string_sql(cond, 1) + ' THEN 1 '
+                command += 'ELSE Null END )'
+
             if i[1] == '' or i[1] is None:
                 command += ' AS "COUNT ' + format_string_sql(i[0]) + '"'
             else:
@@ -372,7 +375,8 @@ def agroup_table(dbname, table_from, table_to, wanted_cols, count_cols=None, ord
     if order is not None:
         command += ' ORDER BY ' + format_string_sql(order)
 
-    print command
+    print 'SQL COMMAND ' + command
+    
     try:
         curs.execute(command)
         conn.commit()
@@ -484,7 +488,7 @@ def select_all(dbname, table):
     curs = conn.cursor()
 
     command = 'SELECT * FROM ' + table
-
+    
     try:
         curs.execute(command)
         data = curs.fetchall()
@@ -545,4 +549,24 @@ def delete_table(dbname, table):
 
     curs.execute(command)
     conn.commit()
+    conn.close()
+
+
+def rename_table(dbname, oldname, newname):
+
+    conn = psy.connect(dbname = dbname, user = 'postgres', host='localhost')
+    curs = conn.cursor()
+
+    oldname = format_string_sql(oldname)
+    newname = format_string_sql(newname)
+
+    command = 'ALTER TABLE ' + oldname + ' RENAME TO ' + newname
+
+    try:
+        curs.execute(command)
+        conn.commit()
+    except psy.ProgrammingError:
+        conn.close()
+        raise SQLException('Failed on command execution {}'.format(command))
+    
     conn.close()

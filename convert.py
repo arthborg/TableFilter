@@ -71,14 +71,24 @@ def to_table(path, dbname, table):
 
     data = ppg.select_all(dbname, table)
     myfile = open(path, 'w')
+    headerdata = ppg.get_columns(dbname, table)
+
+    s = ''
+    for dat in headerdata:
+        s += dat
+        if dat is not headerdata:
+            s += ','
+    s += '\n'
+    myfile.write(s)
+    print s
 
     for row in data:
 
         s = ''
         for col in row:
             s += col
-            if col is not row[-1]:
-                s += ','
+            s += ','
+
         s += '\n'
         myfile.write(s)
 
