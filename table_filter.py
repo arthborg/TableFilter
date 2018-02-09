@@ -33,6 +33,7 @@ def main():
     notebook = ttk.Notebook(window)
 
     tph.initialize_types(std.TYPE_FILENAME)
+    std.clean_log_file()
 
     cvt_frame = cvt_interface.ConversionFrame(notebook)
     notebook.add(cvt_frame, text='Conversao')

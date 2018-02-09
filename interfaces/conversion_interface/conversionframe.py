@@ -38,7 +38,7 @@ class ConversionFrame(tk.Frame):
         self.options_labelframe.pack(fill=tk.X)
 
         # Buttons
-        tk.Button(self.options_labelframe, text='Mostar avancado',
+        tk.Button(self.options_labelframe, text='Mostrar avancado',
                   command=self.toggle_advanced).grid(row=0, column=0, padx=20, pady=10)
         tk.Button(self.options_labelframe, text='Converter arquivo',
                   command=self.convert).grid(row=0, column=1, padx=20, pady=10)

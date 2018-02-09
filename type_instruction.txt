@@ -1,7 +1,7 @@
 #=============================================================================#
 #INTRODUÇÃO AOS TIPOS DE PLANILHAS DO PROGRAMA                                #
 #=============================================================================#
-#									                                          #
+#                                                                             #
 #TIPOS DE PLANILHAS:							                              #
 #									                                          #
 #OS TIPOS SAO COMPOSTOS POR 3 PRINCIPAIS PARTES				                  #

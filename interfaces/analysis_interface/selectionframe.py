@@ -34,6 +34,9 @@ class SelectionFrame(tk.Frame):
         self.database_listbox.bind('<Double-Button-1>', self.__double_database)
         self.selected_listbox.bind('<Double-Button-1>', self.__double_selected)
 
+        self.grid_columnconfigure(0, weight=1)
+        self.grid_columnconfigure(1, weight=1)
+
         self.__update_tables()
         self.get_selected()
 

@@ -99,7 +99,7 @@ class DatabseFrame(tk.Frame):
 
     def __forget(self):
         """ Forgets all the frames on the grid """
-        # self.column_frame.grid_forget()
+        self.column_frame.grid_forget()
         self.rename_frame.grid_forget()
         self.excel_frame.grid_forget()
 

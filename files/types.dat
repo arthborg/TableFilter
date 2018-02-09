@@ -1,32 +1,4 @@
 ADSL
-LOCALIDADE,Localidade;REGIONAL,Regional;NOME_ESTACAO,Estacao
-STATUS_PORTA,Disponivel,disponivel;NOME_ESTACAO,Total,;STATUS_PORTA,Ocupado,ocupado
-Estacao
-Ocupado
-Total
-Available
-ADSL-VOZEDADOS
-REGIONAL,Regional;LOCALIDADE,Localidad;NOME_ESTACAO,Estacao
-NOME_ESTACAO,Total,;STATUS_PORTA,Disponivel,disponivel;STATUS_PORTA,Ocupado,ocupado
-Estacao
-Ocupado
-Total
-Disponivel
-ADSL-MULTIOPS
-LOCALIDADE,Localidade;REGIONAL,Regional;NOME_ESTACAO,Estacao
-NOME_ESTACAO,Total,;STATUS_PORTA,Disponivel,disponivel|disponivel ngn|;STATUS_PORTA,Ocupado,ocupado|
-Estacao
-Ocupado
-Total
-Disponivel
-ADSL-CERTO
-sdf,sdf;REGIONAL,Regional;LOCALIDADE,Localidade;NOME_ESTACAO,Estacao
-dsf,sdf,sdfs;NOME_ESTACAO,Total,;STATUS_PORTA,Disponivel,diponivel|disponivel ngn;STATUS_PORTA,Ocupado,ocupado
-Estacao
-Ocupado
-Total
-Disponivel
-ADSL-AGORAVAI
 REGIONAL,Regional;LOCALIDADE,Localidade;NOME_ESTACAO,Estacao
 NOME_ESTACAO,Total,;STATUS_PORTA,Disponivel,disponivel|disponivel ngn;STATUS_PORTA,Ocupado,ocupado
 Estacao

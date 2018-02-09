@@ -65,7 +65,7 @@ def single_csv(filename, sheet_name, tb_type, year=None, month=None):
     sheet = excel_table.parse(sheet_name)
 
     name = std.standardize_name(0, tb_type, year, month)
-    final = std.CSV_STD_PATH + name + '.csv'
+    final = std.CSV_STD_PATH + '/' + name + '.csv'
 
     sheet.to_csv(path_or_buf=final, sep=',', index=False, encoding='utf-8')
     return final
