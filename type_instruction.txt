@@ -2,33 +2,44 @@
 #INTRODUÇÃO AOS TIPOS DE PLANILHAS DO PROGRAMA                                #
 #=============================================================================#
 #                                                                             #
-#TIPOS DE PLANILHAS:							                              #
-#									                                          #
-#OS TIPOS SAO COMPOSTOS POR 3 PRINCIPAIS PARTES				                  #
-#1A - O NOME								                                  #
-#	AUTO-EXPLICATIVO						                                  #
-#									                                          #
-#2O - CONFIGURAÇÕES DE FILTRAGEM					                          #
-#	CONFIGURAÇÕES A RESPEITO DO PROCESSO DE FILTRAGEM, É ATRAVÉS DELAS QUE    #
-#	O PROGRAMA SABE QUAL A MANEIRA CORRETA DE FILTRAR O ARQUIVO BRUTO E       #
-#	TRANSFORMA-LO EM UMA TABELA MAIS COMPACTA			                      #
-#									                                          #
-#	A TABELA É DIVIDIDA EM DOIS TIPOS PRINCIPAIS DE COLUNAS, SÃO ELES:        #
-#									                                          #
-#	*COLUNAS DE AGRUPAMENTO:					                              #
-#		COLUNAS EM QUE O ARQUIVO BRUTO SERA COMPACTADO, POR EXEMPLO           #
-#		SE AS COLUNAS DE AGRUPAMENTO FOREM CIDADE E ESTADO, A PLANILHA        #
-#		SERA AGRUPADA PARA CADA CIDADE E ESTADO DIFERENTES, ASSIM,            #
-#		TODAS AS INFORMAÇÕES RELATIVAS A CADA CIDADE E ESTADO SERÃO           #
-#               CONDENSADAS CONFORME AS COLUNAS DE CONTAGEM		              #
-#									                                          #
-#	*COLUNAS DE CONTAGEM:
-#		
-#
-#
-#
-#
-#
-#3A - CONFIGURAÇÕES DE ANALIZE						                          #
-#	CONFIGURAÇÕES A RESPEITO DE COMO O PROCESSO DE ANALIZE E PREVISAO SERA    #
-#	FEITO E EM QUAIS COLUNAS ELE SERA APLICADO			                      #
+#TIPOS DE PLANILHAS:                                                          #
+#                                                                             #
+#OS TIPOS SAO COMPOSTOS POR 3 PRINCIPAIS PARTES                               #
+#1A - O NOME                                                                  #
+#   AUTO-EXPLICATIVO                                                          #
+#                                                                             #
+#2O - CONFIGURAÇÕES DE FILTRAGEM                                              #
+#   CONFIGURAÇÕES A RESPEITO DO PROCESSO DE FILTRAGEM, É ATRAVÉS DELAS QUE    #
+#   O PROGRAMA SABE QUAL A MANEIRA CORRETA DE FILTRAR O ARQUIVO BRUTO E       #
+#   TRANSFORMA-LO EM UMA TABELA MAIS COMPACTA                                 #
+#                                                                             #
+#   A TABELA É DIVIDIDA EM DOIS TIPOS PRINCIPAIS DE COLUNAS, SÃO ELES:        #
+#                                                                             #
+#   *COLUNAS DE AGRUPAMENTO:                                                  #
+#       COLUNAS EM QUE O ARQUIVO BRUTO SERA COMPACTADO, POR EXEMPLO           #
+#       SE AS COLUNAS DE AGRUPAMENTO FOREM CIDADE E ESTADO, A PLANILHA        #
+#       SERA AGRUPADA PARA CADA CIDADE E ESTADO DIFERENTES, ASSIM,            #
+#       TODAS AS INFORMAÇÕES RELATIVAS A CADA CIDADE E ESTADO SERÃO           #
+#       CONDENSADAS CONFORME AS COLUNAS DE CONTAGEM                           #
+#                                                                             #
+#   *COLUNAS DE CONTAGEM:                                                     #
+#       COLUNAS PARA FAZER A CONTAGEM DE ALGUMA COLUNA OU VALOR NA TABELA,    #
+#       USANDO O EXEMPLO ANTERIOR, CASO UMA COLUNA DE CONTAGEM SEJA           #
+#       ESPECIFICADA PARA CONTAR O CAMPO POPULACAO, CADA CIDADE E ESTADO      #
+#       TERA SUA POPULAÇÃO SOMADA NA TABELA FINAL, PODE-SE TAMBÉM INFORMAR    #
+#       UM VALOR CONDICIONAL, POR EXEMPLO, CONSIDERE QUE CADA LINHA           #
+#       REPRESENTA UMA PESSOA, PODE-SE ADICIONAR UMA CONDICAO PARA CONTAR O   #
+#       CAMPO NOME, ASSIM, ADICIONANDO A CONDIÇÃO 'joao' A PLANILHA FILTRADA  #
+#       IRÁ CONTAR PARA CADA CIDADE E ESTADO O NUMERO DE PESSOAS CHAMADAS     #
+#       JOAO                                                                  #
+#                                                                             #
+#3A - CONFIGURAÇÕES DE ANALIZE                                                #
+#   CONFIGURAÇÕES A RESPEITO DE COMO O PROCESSO DE ANALIZE E PREVISAO SERA    #
+#   FEITO E EM QUAIS COLUNAS ELE SERA APLICADO. NECESSARIO ESPECIFICAR        #
+#   POR QUAL COLUNA A ANALIZE SERA FEITA, QUAL COLUNA SERA O ALVO DA ANÁLISE  #
+#   QUAL COLUNA GUARDA O TOTAL E QUAL GUARDA A DISPONIBILIDADE, OS ÚLTIMOS SÃO#
+#   APENAS NECESSÁRIOS PARA FAZER O CALCULO DE ESGOTAMENTO                    #
+#                                                                             #
+#=============================================================================#
+
+
