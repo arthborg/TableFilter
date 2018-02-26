@@ -74,14 +74,12 @@ class AnalysisFrame(tk.Frame):
                 'Error', 'O tipo ' + table_type + ' nao pode ter seu esgotamento analisado!')
             return
 
-        selected = selected[::-1]
-
         if analysis_type == 'sse':
             anl.simple_exp(std.DBNAME, table_name, selected, table_type)
         elif analysis_type == 'avg':
             anl.avg_move(std.DBNAME, table_name, selected, table_type)
 
         if growth == 1:
-            anl.growth_rate(std.DBNAME, table_name, table_type)
+            anl.growth_rate(std.DBNAME, table_name, selected[0], table_type)
         if exhaustion == 1:
             anl.months_to_exhaustion(std.DBNAME, table_name, table_type)

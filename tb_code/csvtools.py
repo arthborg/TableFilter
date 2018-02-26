@@ -39,6 +39,8 @@ def convert_to_unicode(filename, newfile):
 
 def semicolon_to_comma(filename, newfile):
     """ Converts a csv file with ';' separators to ',' separators """
+    if check_comma(filename) is True:
+        return True
 
     if filename == newfile:
         copyfile(filename, 'temp')
@@ -54,6 +56,9 @@ def semicolon_to_comma(filename, newfile):
             break
         if char == ';':
             new_file.write(',')
+            continue
+        elif char == ',':
+            continue
         else:
             new_file.write(char)
 
@@ -61,3 +66,15 @@ def semicolon_to_comma(filename, newfile):
     new_file.close()
     if filename == newfile:
         os.remove('temp')
+    return False
+
+
+def check_comma(filename):
+    """ Checks if the file is separated by commas """
+
+    fil = open(filename, 'r')
+    string = fil.readline()
+    fil.close()
+    if string.count(',') >= 5:
+        return True
+    return False

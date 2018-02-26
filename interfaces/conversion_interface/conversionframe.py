@@ -163,15 +163,17 @@ class ConversionFrame(tk.Frame):
 
         filename = self.file_frame.get_filename()
         text = ''
-
-        try:
-            new_file = cvt.normalize_csv_file(filename)
-            final_name = final_name = self.file_frame.get_rename() if isinstance(
-                name, str) else cvt.get_std_name(0, *name)
-            cvt.fileto_postgre(new_file, final_name, std.DBNAME)
-            text += final_name + ' adicionada com sucesso a base de dados'
-        except:
-            text += final_name + ': problema ao criar a tabela na base de dados'
+        print "Trying to convert a csv file"
+        # try:
+        print "Will try to normalize"
+        new_file = cvt.normalize_csv_file(filename)
+        print "Normalized"
+        final_name = final_name = self.file_frame.get_rename() if isinstance(
+            name, str) else cvt.get_std_name(0, *name)
+        cvt.fileto_postgre(new_file, final_name, std.DBNAME)
+        text += final_name + ' adicionada com sucesso a base de dados'
+        # except:
+        #     text += final_name + ': problema ao criar a tabela na base de dados'
         return text
 
     def __convert_multiple(self, name):

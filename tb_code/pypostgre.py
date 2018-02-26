@@ -269,17 +269,23 @@ def create_table(dbname, table, col_names):
 
     table = format_string_sql(table)
     command = 'CREATE TABLE ' + table + ' ('
+    print "command so far " + command
 
     for i in col_names:
-
+        if i == '':
+            i = 'None'
+            end = True
+        else:
+            end = False
         string = format_string_sql(i)
 
         command += string + ' VARCHAR(50)'
-        if i is col_names[-1]:
+        if i is col_names[-1] or end is True:
             command += ')'
         else:
             command += ', '
 
+    print "Trying to establish connection"
     try:
         conn = psy.connect(dbname=dbname, user='postgres', host='localhost')
         curs = conn.cursor()
@@ -483,14 +489,18 @@ def copy_data(dbname, table, filename, header=True):
     conn = psy.connect(dbname=dbname, user='postgres', host='localhost')
     curs = conn.cursor()
 
+    print "ON COPY DATA"
     csv_file = open(filename, 'r')
+    print "OPENED CSV FILE"
 
     if header is True:
         csv_file.readline()
 
     table = format_string_sql(table)
 
+    print "GO TO COPY"
     curs.copy_from(csv_file, table, sep=',')
+    print "DID IT REACH HERE?"
     conn.commit()
     csv_file.close()
 

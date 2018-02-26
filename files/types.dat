@@ -5,3 +5,10 @@ Estacao
 Ocupado
 Total
 Disponivel
+ADSL-2016
+REGIONAL,Regional;LOCALIDADE,Localidade;NOME_ESTACAO,Estacao
+NOME_ESTACAO,Total,;STATUS_PORTA,Disponivel,disponivel|disponivel ngn|disponivel gpon;STATUS_PORTA,Ocupado,ocupado|ocupada
+Estacao
+Ocupado
+Total
+Disponivel

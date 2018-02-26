@@ -15,7 +15,8 @@ def normalize_csv_file(filename):
     """ Normalizes the csv file for future use """
 
     comma_text = std.CSV_STD_PATH + '/commatext.csv'
-    cts.semicolon_to_comma(filename, comma_text)
+    if cts.semicolon_to_comma(filename, comma_text):
+        comma_text = filename
 
     unicode_text = std.CSV_STD_PATH + '/unicodetext.csv'
     cts.convert_to_unicode(comma_text, unicode_text)
@@ -90,7 +91,9 @@ def fileto_postgre(filename, tablename, dbname):
     for i in col_list:
         std.print_log(i)
 
+    print 'will try to create now'
     ppg.create_table(dbname, tablename, col_list)
+    print 'TABLE CREATED'
     ppg.copy_data(dbname, tablename, filename)
     myfile.close()
 
